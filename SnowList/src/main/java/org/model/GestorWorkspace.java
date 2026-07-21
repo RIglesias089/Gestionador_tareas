@@ -15,7 +15,7 @@ public class GestorWorkspace {
         this.id_gestor = id_gestor;
         this.nombre_gestor = nombre_gestor;
         this.descripcion = descripcion;
-        
+
     }
 
 }
