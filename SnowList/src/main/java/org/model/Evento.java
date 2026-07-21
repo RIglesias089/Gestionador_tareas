@@ -12,11 +12,11 @@ public class Evento {
     public Evento (
             String id_evento,
             String nombre_evento,
-            String descripcion,
+            String descripcion
     ){
         this.id_usuario = id_evento;
         this.nombre_usuario = nombre_evento;
         this.descripcion = descripcion;
-        
+
     }
 }
