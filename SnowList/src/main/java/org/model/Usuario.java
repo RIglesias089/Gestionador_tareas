@@ -7,7 +7,7 @@ public class Usuario {
     private String nombre_usuario;
     private String email;
     private String password;
-    private boolean premiun;
+    private boolean premium;
     private String telefono;
 
     //Para poder usar los atributos de la clase planteamos un constructor
@@ -23,7 +23,7 @@ public class Usuario {
         this.nombre_usuario = nombre_usuario;
         this.email = email;
         this.password = password;
-        this.premiun = premiun;
+        this.premium = premium;
         this.telefono = telefono;
     }
 
