@@ -46,4 +46,14 @@ public abstract class Usuario implements Autenticable{
         return worksapce;
     }
 
+    //Creamos el setter o lector para ver si hay nuevos workspace
+    public void setWorksapce(List<GestorWorkspace> worksapce) {
+        this.worksapce = worksapce;
+    }
+
+    //Creamos los getters y setters para le resto de datos
+    public String getId_usuario() {
+        return id_usuario;
+    }
+
 }
