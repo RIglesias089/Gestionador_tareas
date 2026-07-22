@@ -1,7 +1,11 @@
 package org.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //Implementamos un extends para que haga herencia de Usuario a esta clase
 public class UsuarioClasico extends Usuario {
+
     //planteamos la limitenate de grupos
     private int limite_grupos;
 
@@ -12,10 +16,30 @@ public class UsuarioClasico extends Usuario {
             String email,
             String contrasena,
             boolean premiun
+
     ) { //Hacemos la conexion de contructores con la clase padre con el uso de "super"
         super(id_usuario, nombre_usuario, email, contrasena, premiun, "");
         this.limite_grupos = 2; //damos el valor limite de grupos que puede tener el usuario clasico
-        //mas adelante buscaremos implementar los limites de colaboradores que habran por grupo
+        this.setLimiteColaboradores(2); //Limites de colaboradores en el grupo
     }
 
+    public int getLimite_grupos() {
+        return limite_grupos;
+    }
+
+    public UsuarioPremium volversePremium(){
+
+        UsuarioPremium nuevoPremium = new UsuarioPremium(
+                this.getId_usuario(),
+                this.getNombre_usuario(),
+                this.getEmail(),
+                this.getPassword()
+        );
+
+        nuevoPremium.setWorksapce(this.getWorksapce());
+
+        System.out.println("El usuario " + getNombre_usuario() + " Ahora es Premium");
+        return nuevoPremium;
+    }
+    
 }

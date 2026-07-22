@@ -23,7 +23,6 @@ public abstract class Usuario implements Autenticable{
 
     //Para poder usar los atributos de la clase planteamos un constructor
     //Este mismo inicializa los objetos
-
     public Usuario(String id_usuario,
                    String nombre_usuario,
                    String email,
@@ -83,6 +82,7 @@ public abstract class Usuario implements Autenticable{
     public void settelefono(String telefono) {
         this.telefono = telefono;
     }
+
     public String getPassword() {
         return password;
     }
