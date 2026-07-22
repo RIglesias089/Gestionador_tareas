@@ -1,6 +1,13 @@
 package org.model;
 
-public class Usuario {
+//importamos la interfaz autenticable
+import org.interfaces.Autenticable;
+//Tambien importamos un list, para poder permitir que podamos crear listas dinamicas para la funcionalidad de guardar los usuarios
+import java.util.ArrayList;
+import java.util.List;
+
+/*Hacemos que la clase implemente el autenticable Es importante saber que al ser abstracta esta no puede inicializar objetos*/
+public abstract class Usuario implements Autenticable{
 
     //Primero empezamos planteando los distintos atributos de la clase
     private String id_usuario;
