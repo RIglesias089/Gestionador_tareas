@@ -1,8 +1,8 @@
 package org.model;
 
-//importamos la interfaz autenticable
+/*Importamos la interfaz auteticable y Tambien importamos un list,
+ para poder permitir que podamos crear listas dinamicas para la funcionalidad de guardar los usuarios*/
 import org.interfaces.Autenticable;
-//Tambien importamos un list, para poder permitir que podamos crear listas dinamicas para la funcionalidad de guardar los usuarios
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +16,10 @@ public abstract class Usuario implements Autenticable{
     private String password;
     private boolean premium;
     private String telefono;
+    private int limiteColaboradores;
+
+    //Creamos una lista dinamica para el gestor de Workspace
+    private List<GestorWorkspace> worksapce;
 
     //Para poder usar los atributos de la clase planteamos un constructor
     //Este mismo inicializa los objetos
@@ -32,6 +36,14 @@ public abstract class Usuario implements Autenticable{
         this.password = password;
         this.premium = premium;
         this.telefono = telefono;
+        this.limiteColaboradores = 0;
+
+        this.worksapce = new ArrayList<>();
+    }
+
+    //Creamos el getter o capturador para crear un workspace
+    public List<GestorWorkspace> getWorksapce() {
+        return worksapce;
     }
 
 }
