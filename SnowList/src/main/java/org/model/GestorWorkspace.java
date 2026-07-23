@@ -120,4 +120,32 @@ public class GestorWorkspace {
         }
     }
 
+    public void mostrarInfoGrupo() {
+
+        System.out.println("=== INFORMACIÓN DEL GESTOR ===");
+        System.out.println("ID: " + id_gestor);
+        System.out.println("Nombre: " + nombre_gestor);
+        System.out.println("Descripcion: " + descripcion);
+        System.out.println("Creador: " + creador.getNombre_usuario());
+
+        System.out.println("\n--- Miembros del gestor ---");
+
+        if (miembros.isEmpty()) {
+
+            System.out.println("No hay miembros en el gestor.");
+
+        } else {
+
+            for (Usuario u : miembros) {
+
+                System.out.println("- " + u.getNombre_usuario());
+
+            }
+
+        }
+
+        System.out.println("=============================");
+
+    }
+
 }
