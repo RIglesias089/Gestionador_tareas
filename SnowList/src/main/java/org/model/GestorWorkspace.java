@@ -32,7 +32,6 @@ public class GestorWorkspace {
 
     }
 
-    //Implementamos los getters y setters respectivos para el gestor de workspace
     public String getId_gestor() {
         return id_gestor;
     }
@@ -81,7 +80,6 @@ public class GestorWorkspace {
         this.creador = creador;
     }
 
-    //Creamos los metodos que usaremos en el Gestor de workspace (crear, modificar, borrar, etc)
     public void agregarUsuario(Usuario usuario) {
 
         if (!miembros.contains(usuario)) {
@@ -91,6 +89,7 @@ public class GestorWorkspace {
         if (!usuario.getWorkspaces().contains(this)) {
             usuario.getWorkspaces().add(this);
         }
+
     }
 
     public void agregarEvento(Evento evento) {
