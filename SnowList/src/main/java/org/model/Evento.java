@@ -64,5 +64,10 @@ public abstract class Evento {
         return tipo + " '" + nombre_evento + "' programado para " + fecha + ".";
     }
 
-    
+    //Creamos los metodos que usaremos en la clase
+    public void notificar() {
+        System.out.println("Notificación: " + getNotificacionTexto());
+    }
+
+    public abstract void mostrarInformacion();
 }
