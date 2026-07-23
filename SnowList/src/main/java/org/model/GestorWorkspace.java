@@ -111,6 +111,13 @@ public class GestorWorkspace {
         }
     }
 
-    
+    public void eliminarEventos(Evento evento) {
+
+        if (eventos.remove(evento)) {
+            System.out.println("Evento eliminado del Workspace.");
+        } else {
+            System.out.println("Evento no encontrado en el Workspace.");
+        }
+    }
 
 }
