@@ -60,5 +60,19 @@ public class Recordatorio extends Evento {
         this.estrategias.add(estrategia);
     }
 
+    //Creamos los override necesarios
+    @Override
+    public void agregarColaborador(Usuario usuario) {
+        if (usuario == null || creador == null) {
+            return;
+        }
+        if (getColaboradores().size() >= creador.getLimiteColaboradores()) {
+            System.out.println("No se puede agregar más colaboradores. Límite alcanzado: " + creador.getLimiteColaboradores());
+            return;
+        }
+        super.agregarColaborador(usuario);
+    }
+
+    
 
 }
