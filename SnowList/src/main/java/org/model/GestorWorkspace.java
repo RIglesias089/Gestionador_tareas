@@ -100,6 +100,17 @@ public class GestorWorkspace {
 
     }
 
+    public void editarEventos(Evento evento, String nuevoNombre, String nuevaDescripcion) {
+
+        if (eventos.contains(evento)) {
+            evento.setNombre(nuevoNombre);
+            evento.setDescripcion(nuevaDescripcion);
+            System.out.println("Evento editado: " + evento.getNombre());
+        } else {
+            System.out.println("Evento no encontrado en el Workspace.");
+        }
+    }
+
     
 
 }
