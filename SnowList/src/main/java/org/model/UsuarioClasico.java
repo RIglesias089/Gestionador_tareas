@@ -48,6 +48,18 @@ public class UsuarioClasico extends Usuario {
         if (getWorksapce().size() >= limite_grupos) {
             System.out.println("El usuario " + getNombre_usuario() + " Ha alcanzado el limite de workspace (2)");
             return null;
+
+        //Creamos el workspace normalmente
+            List<Usuario> miembros = new ArrayList<>();
+            miembros.add(this);
+
+            GestorWorkspace nuevoGestorWorkspace = new GestorWorkspace(
+                    idWorkspace,
+                    nombreWorkspace,
+                    descripcionWorkspace,
+                    miembros,
+                    this
+            );
         }
     }
 }
