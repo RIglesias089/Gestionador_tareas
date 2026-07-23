@@ -106,6 +106,26 @@ public class Recordatorio extends Evento {
         });
     }
 
-    
+    @Override
+    public void mostrarInformacion() {
+        System.out.println("====== RECORDATORIO ======");
+        System.out.println("ID: " + id_evento);
+        System.out.println("Nombre: " + nombre_evento);
+        System.out.println("Descripcion: " + descripcion);
+
+        if (creador != null) {
+            System.out.println("Creador: " + creador.getNombre_usuario());
+            System.out.println("Telefono del Creador: " + creador.gettelefono());
+        } else {
+            System.out.println("Creador no definido");
+        }
+
+        System.out.println("Fecha: " + fecha);
+        System.out.println("Hora: " + Hora);
+    }
+
+    public String getNotificacionTexto() {
+        return "Recordatorio '" + nombre_evento + "' programado para " + fecha + " a las " + Hora + ".";
+    }
 
 }
