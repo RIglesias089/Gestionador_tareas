@@ -38,7 +38,6 @@ public class Recordatorio extends Evento {
         }
     }
 
-    //Implementamos los getters y setters de la clase
     public LocalDateTime getHora() {
         return Hora;
     }
@@ -60,7 +59,6 @@ public class Recordatorio extends Evento {
         this.estrategias.add(estrategia);
     }
 
-    //Creamos los override necesarios
     @Override
     public void agregarColaborador(Usuario usuario) {
         if (usuario == null || creador == null) {
@@ -128,4 +126,34 @@ public class Recordatorio extends Evento {
         return "Recordatorio '" + nombre_evento + "' programado para " + fecha + " a las " + Hora + ".";
     }
 
+    public static Recordatorio crearDesdeConsola(
+            Scanner scanner,
+            String id,
+            Usuario creador
+    ) {
+        System.out.print("Nombre del recordatorio: ");
+        String nombre = scanner.nextLine();
+
+        System.out.print("Descripcion: ");
+        String descripcion = scanner.nextLine();
+
+        System.out.print("Fecha (YYYY-MM-DD): ");
+        LocalDate fecha = LocalDate.parse(scanner.nextLine());
+
+        System.out.print("Hora (HH:MM): ");
+        String horaStr = scanner.nextLine();
+
+        LocalDateTime Hora = LocalDateTime.parse(
+                fecha + "T" + horaStr + ":00"
+        );
+
+        return new Recordatorio(
+                id,
+                nombre,
+                descripcion,
+                creador,
+                fecha,
+                Hora
+        );
+    }
 }
