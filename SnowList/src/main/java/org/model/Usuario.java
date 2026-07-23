@@ -107,4 +107,12 @@ public abstract class Usuario implements Autenticable{
         this.limiteColaboradores = limiteColaboradores;
     }
 
+    public abstract GestorWorkspace crearWorkspace(
+            String idWorkspace,
+            String nombreWorkspace,
+            String descripcionWorkspace
+    );
+
+    
+
 }
