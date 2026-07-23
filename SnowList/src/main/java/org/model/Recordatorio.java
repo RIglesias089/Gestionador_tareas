@@ -73,6 +73,39 @@ public class Recordatorio extends Evento {
         super.agregarColaborador(usuario);
     }
 
+    public void notificar() {
+        System.out.println("Notificación de recordatorio programado: " + getNotificacionTexto());
+    }
+
+    public void activarAlarma() {
+        String mensaje = "ALARMA ACTIVADA - Recordatorio: "
+                + nombre_evento
+                + " | Descripcion: "
+                + descripcion
+                + " | Fecha: "
+                + fecha
+                + " | Hora: "
+                + Hora;
+
+        if (creador != null) {
+            mensaje += " | Creador: " + creador.getNombre_usuario();
+        } else {
+            mensaje += " | Creador: (no definido)";
+        }
+
+        for (NotificacionesStrategy estrategia : estrategias) {
+            estrategia.enviarnotificaion(mensaje);
+        }
+
+        Platform.runLater(() -> {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Recordatorio");
+            alert.setHeaderText("Recordatorio activado");
+            alert.setContentText(getNotificacionTexto());
+            alert.showAndWait();
+        });
+    }
+
     
 
 }
