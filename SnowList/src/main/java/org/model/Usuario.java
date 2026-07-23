@@ -113,6 +113,18 @@ public abstract class Usuario implements Autenticable{
             String descripcionWorkspace
     );
 
-    
+    public void incluirPersonasWorkspace(
+            Usuario usuario,
+            GestorWorkspace workspace
+    ) {
+
+        if (!workspaces.contains(workspace)) {
+            System.out.println("El usuario no pertenece a este Workspace.");
+            return;
+        }
+
+        workspace.agregarUsuario(usuario);
+        System.out.println("Usuario agregado al Workspace: " + usuario.getNombre_usuario());
+    }
 
 }
