@@ -38,4 +38,27 @@ public class Recordatorio extends Evento {
         }
     }
 
+    //Implementamos los getters y setters de la clase
+    public LocalDateTime getHora() {
+        return Hora;
+    }
+
+    public void setHora(LocalDateTime Hora) {
+        this.Hora = Hora;
+    }
+
+    public List<NotificacionesStrategy> getEstrategias() {
+        return estrategias;
+    }
+
+    public void setEstrategias(List<NotificacionesStrategy> estrategias) {
+        this.estrategias = estrategias;
+    }
+
+    public void setEstrategia(NotificacionesStrategy estrategia) {
+        this.estrategias = new ArrayList<>();
+        this.estrategias.add(estrategia);
+    }
+
+
 }
