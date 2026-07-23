@@ -41,5 +41,13 @@ public class UsuarioClasico extends Usuario {
         System.out.println("El usuario " + getNombre_usuario() + " Ahora es Premium");
         return nuevoPremium;
     }
-    
+
+    @Override
+    public GestorWorkspace crearWorkspace(String idWorkspace, String nombreWorkspace, String descripcionWorkspace){
+        //Validamos los limites
+        if (getWorksapce().size() >= limite_grupos) {
+            System.out.println("El usuario " + getNombre_usuario() + " Ha alcanzado el limite de workspace (2)");
+            return null;
+        }
+    }
 }
