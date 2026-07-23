@@ -43,6 +43,8 @@ public abstract class Usuario implements Autenticable {
         return workspaces;
     }
 
+    //Plantemos todos los getters y setters
+
     public void setWorkspaces(List<GestorWorkspace> workspaces) {
         this.workspaces = workspaces;
     }
@@ -78,6 +80,7 @@ public abstract class Usuario implements Autenticable {
     public void settelefono(String telefono) {
         this.telefono = telefono;
     }
+
     public String getPassword() {
         return password;
     }
@@ -112,18 +115,15 @@ public abstract class Usuario implements Autenticable {
             Usuario usuario,
             GestorWorkspace workspace
     ) {
-
         if (!workspaces.contains(workspace)) {
             System.out.println("El usuario no pertenece a este Workspace.");
             return;
         }
-
         workspace.agregarUsuario(usuario);
         System.out.println("Usuario agregado al Workspace: " + usuario.getNombre_usuario());
     }
 
     public void eliminarWorkspace(GestorWorkspace workspace) {
-
         if (workspaces.remove(workspace)) {
             System.out.println("Workspace eliminado por el usuario: " + nombre_usuario);
         } else {
