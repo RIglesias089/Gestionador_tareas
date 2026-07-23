@@ -127,4 +127,13 @@ public abstract class Usuario implements Autenticable{
         System.out.println("Usuario agregado al Workspace: " + usuario.getNombre_usuario());
     }
 
+    public void eliminarWorkspace(GestorWorkspace workspace) {
+
+        if (workspaces.remove(workspace)) {
+            System.out.println("Workspace eliminado por el usuario: " + nombre_usuario);
+        } else {
+            System.out.println("Workspace no encontrado.");
+        }
+    }
+
 }
