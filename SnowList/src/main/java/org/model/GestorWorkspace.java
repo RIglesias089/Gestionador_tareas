@@ -32,6 +32,7 @@ public class GestorWorkspace {
 
     }
 
+    //Implementamos los getters y setters de la clase
     public String getId_gestor() {
         return id_gestor;
     }
@@ -80,6 +81,7 @@ public class GestorWorkspace {
         this.creador = creador;
     }
 
+    //Creamos los metodos de la clase
     public void agregarUsuario(Usuario usuario) {
 
         if (!miembros.contains(usuario)) {
