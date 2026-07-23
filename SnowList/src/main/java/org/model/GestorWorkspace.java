@@ -91,7 +91,15 @@ public class GestorWorkspace {
         if (!usuario.getWorkspaces().contains(this)) {
             usuario.getWorkspaces().add(this);
         }
+    }
+
+    public void agregarEvento(Evento evento) {
+
+        eventos.add(evento);
+        System.out.println("Evento agregado al Workspace: " + evento.getNombre());
 
     }
+
+    
 
 }
