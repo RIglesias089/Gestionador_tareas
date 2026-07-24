@@ -32,4 +32,26 @@ public class Tarea extends Evento {
         this.checklist = new ArrayList<>();
         this.setColor(obtenerColorPorPrioridad(prioridad));
     }
+
+    //Implementamos los getters y setters
+    public Prioridad getPrioridad() {
+        return prioridad;
+    }
+
+    public void setPrioridad(Prioridad prioridad) {
+        this.prioridad = prioridad;
+        this.setColor(obtenerColorPorPrioridad(prioridad));
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
+    public List<ChecklistItem> getChecklist() {
+        return checklist;
+    }
 }
