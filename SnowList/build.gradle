@@ -18,7 +18,7 @@ javafx {
 }
 
 application {
-    mainClass = 'org.App' //esto hara que en vez de apuntar a main apunte a App
+    mainClass = 'org.Main' //esto hara que en vez de apuntar a main apunte a App
 }
 
 sourceSets {
