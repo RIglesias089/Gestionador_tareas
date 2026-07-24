@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Recordatorio extends Evento {
 
     private LocalDateTime Hora;
-    private List<NotificacionesStrategy> estrategias;
+    private List<NotificacionesStrategy> estrategias; //Futuro strategy que implementaremos
 
     public Recordatorio(
             String id_evento,

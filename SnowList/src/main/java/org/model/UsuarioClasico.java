@@ -3,31 +3,27 @@ package org.model;
 import java.util.ArrayList;
 import java.util.List;
 
-//Implementamos un extends para que haga herencia de Usuario a esta clase
 public class UsuarioClasico extends Usuario {
 
-    //planteamos la limitenate de grupos
     private int limite_grupos;
 
-    //Planteamos el constructor de esta clase
     public UsuarioClasico(
             String id_usuario,
             String nombre_usuario,
             String email,
             String contrasena,
             boolean premiun
-
-    ) { //Hacemos la conexion de contructores con la clase padre con el uso de "super"
+    ) {
         super(id_usuario, nombre_usuario, email, contrasena, premiun, "");
-        this.limite_grupos = 2; //damos el valor limite de grupos que puede tener el usuario clasico
-        this.setLimiteColaboradores(2); //Limites de colaboradores en el grupo
+        this.limite_grupos = 2;
+        this.setLimiteColaboradores(2);
     }
 
     public int getLimite_grupos() {
         return limite_grupos;
     }
 
-    public UsuarioPremium volversePremium(){
+    public UsuarioPremium volversePremiun() {
 
         UsuarioPremium nuevoPremium = new UsuarioPremium(
                 this.getId_usuario(),
@@ -36,30 +32,41 @@ public class UsuarioClasico extends Usuario {
                 this.getPassword()
         );
 
-        nuevoPremium.setWorksapce(this.getWorksapce());
+        nuevoPremium.setWorkspaces(this.getWorkspaces());
 
-        System.out.println("El usuario " + getNombre_usuario() + " Ahora es Premium");
+        System.out.println("El usuario " + getNombre_usuario() + " ahora es PREMIUM");
+
         return nuevoPremium;
     }
 
     @Override
-    public GestorWorkspace crearWorkspace(String idWorkspace, String nombreWorkspace, String descripcionWorkspace){
-        //Validamos los limites
-        if (getWorksapce().size() >= limite_grupos) {
-            System.out.println("El usuario " + getNombre_usuario() + " Ha alcanzado el limite de workspace (2)");
+    public GestorWorkspace crearWorkspace(String idWorkspace, String nombreWorkspace, String descripcionWorkspace) {
+
+        //validar limites
+        if (getWorkspaces().size() >= limite_grupos) {
+            System.out.println("El usuario " + getNombre_usuario() +
+                    " ha alcanzado el límite de Workspaces (2).");
             return null;
-
-        //Creamos el workspace normalmente
-            List<Usuario> miembros = new ArrayList<>();
-            miembros.add(this);
-
-            GestorWorkspace nuevoGestorWorkspace = new GestorWorkspace(
-                    idWorkspace,
-                    nombreWorkspace,
-                    descripcionWorkspace,
-                    miembros,
-                    this
-            );
         }
+
+        //crear Workspace normalmente
+        List<Usuario> miembros = new ArrayList<>();
+        miembros.add(this);
+
+        GestorWorkspace nuevoGestorWorkspace = new GestorWorkspace(
+                idWorkspace,
+                nombreWorkspace,
+                descripcionWorkspace,
+                miembros,
+                this
+        );
+
+        getWorkspaces().add(nuevoGestorWorkspace);
+
+        System.out.println("Se ha creado un nuevo Workspace: "
+                + nombreWorkspace +
+                " por el usuario: " + getNombre_usuario());
+
+        return nuevoGestorWorkspace;
     }
 }
